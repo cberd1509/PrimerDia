@@ -26,7 +26,7 @@ figure
 
 v1 = zeros(length(x1-1));
 
-for i= 1 : 1 : length(v1)-2
+for i= 1 : 1 : length(v1)-1
     v1(i)=(y1(i+1)-y1(i))/(t(i+1)-t(i));    
 end
 
