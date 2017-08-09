@@ -15,9 +15,9 @@ A3  = h*h3*width;
 x=0:0.01:L;
 
 
-k1 = lognrnd(0,0.02,size(x))+80;
-k2 = lognrnd(0,0.02,size(x))+70;
-k3 = lognrnd(0,0.02,size(x))+90;
+k1 = lognrnd(0,0.2,size(x))+80;
+k2 = lognrnd(0,0.2,size(x))+70;
+k3 = lognrnd(0,0.2,size(x))+90;
 
 
 %viscosidad
