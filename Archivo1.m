@@ -5,6 +5,6 @@ maximo = 5;
 data2 = data*(maximo-minimo)+minimo;
 
 plot(data2,'r.')
-hold on 
+figure
 plot(data,'b.')
-hold off
+
