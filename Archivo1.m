@@ -8,3 +8,5 @@ plot(data2,'r.')
 figure
 plot(data,'b.')
 
+
+
