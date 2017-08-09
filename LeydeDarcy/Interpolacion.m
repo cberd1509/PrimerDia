@@ -8,8 +8,11 @@ A  = h*width;
 
 x=0:0.01:L;
 
-k0=100; %md
-k = normrnd(0,3,size(x))+k0;
+
+k(1:50000) = normrnd(0,3,1,50000)+100;
+k(50001:150000) = normrnd(0,1,1,100000)+150;
+k(150001:200001) = normrnd(0,4,1,50001)+110;
+
 
 %viscosidad
 
@@ -62,3 +65,11 @@ ylabel('Prsion 1')
 legend('P1')
 grid on
 title('Curva de P1')
+
+subplot(2,2,4)
+plot(x,k)
+xlabel('Permeabilidad (mD)')
+ylabel('Permeabilidad cada X')
+legend('K')
+grid on
+title('Curva de K')
