@@ -8,7 +8,8 @@ A  = h*width;
 
 x=0:0.01:L;
 
-k=100; %md
+k0=100; %md
+k = normrnd(0,3,size(x))+k0;
 
 %viscosidad
 
@@ -28,7 +29,7 @@ P=(P0-Pf)*(1-exp(alfa*x))+Pf;
 phi = 0.15;
 
 for i=1:length(x)
-    q(i)=((0.001127)*k*A/mu)*(P(i)-P(1))/x(i);
+    q(i)=((0.001127)*k(i)*A/mu)*(P(i)-P(1))/x(i);
     P1(i)=(P(i)-P(1))/x(i);
 end
 
@@ -36,7 +37,9 @@ vapa = q/A;
 
 vact = q/(phi*A);
 
-figure
+
+subplot(2,2,1);
+
 plot(x,P,'r')
 xlabel('Distancia (ft)')
 ylabel('Presion (psi)')
@@ -44,10 +47,18 @@ legend('P')
 grid on
 title('Curva de caida de presión')
 
-figure
+subplot(2,2,2);
 plot(x,q)
 xlabel('Distancia (ft)')
 ylabel('Caudal (bbl/day)')
 legend('q (bbl/day')
 grid on
 title('Curva de caida de caudal')
+
+subplot(2,2,3);
+plot(x,P1)
+xlabel('Distancia (ft)')
+ylabel('Prsion 1')
+legend('P1')
+grid on
+title('Curva de P1')
